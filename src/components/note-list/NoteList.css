@@ -1,0 +1,4 @@
+.note-list {
+    padding: var(--padding);
+    overflow-y: scroll;
+}

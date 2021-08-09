@@ -1,0 +1,33 @@
+.input {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin) 0;
+    width: 100%;
+}
+
+.input__label {
+    color: var(--light);
+    font: 1.4rem var(--text);
+    margin-bottom: var(--margin);
+}
+
+.input__field {
+    background-color: var(--light);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--dark);
+    font: 1.2rem var(--text);
+    padding: var(--padding);
+    transition: all var(--time);
+    width: 100%;
+}
+
+.input__field:focus {
+    box-shadow: var(--shadow);
+    outline: none;
+}
+
+.input__field:hover {
+    box-shadow: var(--shadow);
+}

@@ -1,0 +1,30 @@
+.checkbox {
+    display: flex;
+    margin: var(--margin) 0;
+}
+
+.checkbox__label {
+    color: var(--light);
+    font: 1.4rem var(--text);
+    margin-left: var(--margin);
+}
+
+.checkbox__field {
+    background-color: var(--gray);
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius);
+    transition: all var(--time);
+}
+
+.checkbox__field:hover {
+    cursor: pointer;
+}
+
+.checkbox__checked {
+    height: 20px;
+    width: 30px;
+    border-left: 6px solid var(--accept);
+    border-bottom: 6px solid var(--accept);
+    transform: rotate(-45deg);
+}

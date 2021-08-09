@@ -1,0 +1,19 @@
+.note {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--primary);
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+    align-items: center;
+}
+
+.note__text {
+    font: 1.2rem var(--text);
+    color: var(--dark);
+    padding: var(--padding);
+}
+
+.note__options {
+    display: flex;
+    align-items: center;
+}

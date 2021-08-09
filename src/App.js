@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Menu from "./components/menu/Menu";
+import NoteList from "./components/note-list/NoteList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [notes, setNotes] = useState([]);
+    const [searchParams, setSearchParams] = useState({
+        searchString: "",
+        finished: true,
+        unfinished: true,
+    });
+
+    return (
+        <div className="App">
+            <Menu
+                fnCreateNote={(note) => {
+                    setNotes([...notes, note]);
+                }}
+                fnChangeSearchParams={(searchParams) => {
+                    setSearchParams(searchParams);
+                }}
+            />
+            <NoteList
+                notes={notes}
+                searchParams={searchParams}
+                fnChangeChecked={({ checked, index }) => {
+                    let updatedNotes = notes;
+
+                    updatedNotes[index].done = checked;
+
+                    setNotes([...updatedNotes]);
+                }}
+                fnDeleteNote={({ index }) => {
+                    setNotes(
+                        notes.filter((note, noteIndex) => {
+                            return noteIndex !== index;
+                        })
+                    );
+                }}
+            />
+        </div>
+    );
 }
 
 export default App;

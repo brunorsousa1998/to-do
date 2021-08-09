@@ -1,0 +1,22 @@
+.menu {
+    align-items: center;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    box-shadow: var(--shadow);
+    overflow-y: scroll;
+}
+
+.logo {
+    color: var(--light);
+    font: 2.2rem var(--text);
+}
+
+.menu--forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 80%;
+}
